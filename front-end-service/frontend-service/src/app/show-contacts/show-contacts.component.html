@@ -1,0 +1,19 @@
+<h2>All Contacts</h2>
+<div class="container">
+  <ul class="responsive-table">
+    <li class="table-header" *ngIf = "contacts">
+      <div class="col col-1">UserId</div>
+      <div class="col col-2">Name</div>
+      <div class="col col-3">Number</div>
+      <div class="col col-4">Delete</div>
+    </li>
+    <li class="table-row" *ngFor = "let contact of contacts;">
+      <div class="col col-1" data-label="user id">{{contact._id}}</div>
+      <div class="col col-2" data-label="Contact name">{{contact.name}}</div>
+      <div class="col col-3" data-label="Phone Number">{{contact.phone}}</div>
+      <div class="col col-4" data-label="Delete">
+        <button (click) = "deleteContact(contact)" mat-flat-button color="warn" class="btn-block">Delete</button></div>
+    </li>
+  </ul><!--mat-stroked-button color="accent" class="btn-block"-->
+</div>
+  

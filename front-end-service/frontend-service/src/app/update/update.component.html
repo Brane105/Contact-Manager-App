@@ -1,0 +1,25 @@
+<mat-card fxLayout="row" fxLayoutAlign="center center">
+    <mat-card-header>
+        <mat-card-title>Update Profile</mat-card-title>
+    </mat-card-header><hr>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>phone:</mat-label>
+            <input class="form-control" type="number" matInput [formControl]="num" placeholder="Enter here">
+          </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Dob: </mat-label>
+            <input class="form-control" type="date" matInput [formControl]="dob" placeholder="Enter here" >
+          </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>password: </mat-label>
+            <input class="form-control" type="text" [formControl]="pass" matInput placeholder="Enter here">
+          </mat-form-field>
+        <br>
+    <div class="btn btn-success">
+        <button type="submit" (click)="handleUpdate()" mat-raised-button color="accent" class="btn-block">Update</button>
+    </div>
+</div>
+</mat-card>

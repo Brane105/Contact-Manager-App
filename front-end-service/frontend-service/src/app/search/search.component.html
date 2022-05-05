@@ -1,0 +1,16 @@
+<div>
+  <mat-card-header>
+    <mat-card-title>Find Contacts</mat-card-title>
+  </mat-card-header>
+    <form>
+      <mat-form-field appearance="fill">
+        <mat-label>Search : </mat-label>
+        <label for="search"></label><input type = "text" name = "name" matInput (input) = "search(name)" [(ngModel)] = "name" class = "form-control" placeholder="Enter name">
+      </mat-form-field>
+        <div class = "col-4" *ngIf = "errorMessage" class = "text-danger">
+            {{errorMessage}}
+        </div>
+    </form>
+    <hr>
+   <app-show-contacts [contacts] = "searchedContacts"></app-show-contacts>
+  </div>

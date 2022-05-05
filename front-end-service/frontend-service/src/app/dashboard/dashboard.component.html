@@ -1,0 +1,11 @@
+<mat-card style="width: 400px; height: 100px;">
+    <br>
+<div *ngIf = "name">
+    <mat-card-header>
+        <mat-card-title>Bonjour, {{name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-header *ngIf = "totalContacts">
+    <mat-card-subtitle>Your total contats: {{totalContacts}}</mat-card-subtitle>
+</mat-card-header>
+</div>
+</mat-card>

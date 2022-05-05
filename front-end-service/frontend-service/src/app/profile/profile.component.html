@@ -1,0 +1,45 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a routerLink="/dasboard" class="title">Contact Management App</a></div>
+    <span class="nav-tool-items">
+      <a mat-button routerLink = "dashboard">Dashboard</a> 
+        <a mat-button routerLink = "addContact">Add Contact</a> 
+        <a mat-button routerLink = "showContacts">Show Contacts</a> 
+        <a mat-button routerLink = "search">Search contact</a> 
+    <button mat-button [matMenuTriggerFor]="menu">Settings</button>
+    <mat-menu #menu="matMenu">
+    <button mat-menu-item><a mat-button routerLink = "update">Update Profile</a></button>
+    <button mat-menu-item><a mat-button routerLink = "updateContact">Update Contact</a></button>
+  <button mat-menu-item><a mat-button routerLink = "delete">Delete profile</a></button>
+  <button mat-menu-item><a mat-button routerLink = "/login">Logout</a></button>
+</mat-menu>
+</span>
+</mat-toolbar> 
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>
+        <mat-card-subtitle>
+            <p>Profile Summary</p>
+                <div *ngIf = "profile">
+                    <table>
+                        <tr>
+                            <th>Name: </th>
+                            <td>{{profile.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Bdate: </th>
+                            <td>{{profile.dob}}</td>
+                        </tr>
+                        <tr>
+                            <th>Phone: </th>
+                            <td>{{profile.phone}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </mat-card-subtitle>
+    </mat-drawer>
+    <mat-drawer-content style="margin-left: 300px; margin-top: 2em;width: fit-content;"><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>
+<mat-toolbar class="app-header" style="margin-top:660px;">
+    <span style="margin-left: 50%;" >Made By Brane105</span>
+</mat-toolbar>
+  
+

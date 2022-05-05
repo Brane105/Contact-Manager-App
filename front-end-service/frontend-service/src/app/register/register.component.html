@@ -1,0 +1,46 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="" class="title">Contact Management App</a></div>
+    <span class="nav-tool-items">
+      <a mat-button routerLink="/login" routerLinkActive="active">Log in</a>
+      <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active">Register</a>
+    </span>
+</mat-toolbar>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Profile Registration</mat-card-title>
+      </mat-card-header>
+    <!--form-->
+      <form class="example-form" [formGroup] = "profileForm" (ngSubmit) = "handleSubmit()">
+        <br>
+        <mat-card-content>
+        <!--userId-->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="UserId" formControlName = "_id" type = "number" >
+          </mat-form-field>
+          <span [hidden]="profileForm.controls['_id'].pristine || profileForm.controls['_id'].valid" style="color: red;">User Id Required</span>
+          <!--Name-->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Name" formControlName = "name" type = "text" >
+          </mat-form-field>
+          <span [hidden]="profileForm.controls['name'].pristine || profileForm.controls['name'].valid" style="color: red;">Name Required</span>
+          <!--passwrod-->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" formControlName = "password" type = "password" >
+          </mat-form-field>
+          <span [hidden]="profileForm.controls['password'].pristine || profileForm.controls['password'].valid" style="color: red;">Password Required</span>
+           <!--Phone-->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="phone" formControlName = "phone" type = "tel" >
+          </mat-form-field>
+          <span [hidden]="profileForm.controls['phone'].pristine || profileForm.controls['phone'].valid" style="color: red;">Phone number Required</span>
+           <!--dob-->
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="dob" formControlName = "dob" type = "date" class = "form-control">
+          </mat-form-field>
+          <span [hidden]="profileForm.controls['dob'].pristine || profileForm.controls['dob'].valid" style="color: red;">Date Required</span>
+        </mat-card-content>
+        <button mat-raised-button color="primary"class="btn-block" [disabled]="profileForm.invalid">Register</button>
+      </form>
+    </mat-card>
+  </div>

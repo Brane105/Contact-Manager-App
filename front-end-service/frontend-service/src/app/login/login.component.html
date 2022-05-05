@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="app-header">
+    <div><a href="" class="title">Contact Management App</a></div>
+    <span class="nav-tool-items">
+      <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+      <a mat-button mat-raised-button routerLink="/register" routerLinkActive="active">Register</a>
+    </span>
+</mat-toolbar>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Log in</mat-card-title>
+      </mat-card-header><br>
+        <form class="example-form" [formGroup] = "loginForm" (ngSubmit) = "handleSubmit()">
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+        <input matInput placeholder="User Id" formControlName = "_id" type = "number" class = "form-control">
+          </mat-form-field>
+          <span [hidden]="loginForm.controls['_id'].pristine || loginForm.controls['_id'].valid" style="color: red;">User Id Required</span>
+          <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" formControlName = "password" type = "password" class = "form-control">
+          </mat-form-field>
+          <span [hidden]="loginForm.controls['password'].pristine || loginForm.controls['password'].valid" style="color: red;">password Required</span>
+        </mat-card-content>
+        <button mat-raised-button color="accent" class="btn-block">Log in</button>
+      </form>
+</mat-card>
+    

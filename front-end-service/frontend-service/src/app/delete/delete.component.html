@@ -1,0 +1,11 @@
+<mat-card>
+<div>
+  <h3 >Delete Profile ?</h3>
+  <hr>
+  <div *ngIf="profile">
+  <h4>Bounjour!, {{profile.name}} are you sure you want to delete your profile?</h4>
+</div>
+  <br>
+  <button (click)="confirmDelete()" mat-raised-button color="warn" >Confirm</button>
+</div>
+</mat-card>

@@ -1,0 +1,25 @@
+<mat-card class="box" class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card-header>
+        <mat-card-title>Add Contacts</mat-card-title>
+      </mat-card-header>
+        <hr>
+        <form (ngSubmit) = "addContact(contactForm.value)" #contactForm = "ngForm">
+          <div class = "form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>ContactId</mat-label>
+              <input type = "number" name = "_id" [(ngModel)] = "_id" matInput placeholder="Contact ID">  
+            </mat-form-field><span>&nbsp;&nbsp;</span>
+            <mat-form-field appearance="fill">
+              <mat-label>Name</mat-label>
+              <input type = "text" name = "name" [(ngModel)] = "name" matInput placeholder="Enter Name">
+            </mat-form-field><br>
+            <mat-form-field appearance="fill">
+              <mat-label>Phone</mat-label>
+              <input type = "number" name = "phone" [(ngModel)] = "phone" matInput placeholder="Mobile number">   
+            </mat-form-field>
+              <mat-card-content>
+                  <button mat-raised-button color="accent" class="btn-block">Save</button>
+              </mat-card-content>    
+              </div>
+        </form>
+</mat-card>
